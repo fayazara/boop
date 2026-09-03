@@ -12,12 +12,15 @@ import SwiftUI
 struct BoopApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var delegate
     @Bindable private var settings = BoopSettings.shared
+    @ObservedObject private var updater = UpdaterManager.shared
 
     var body: some Scene {
         MenuBarExtra("Boop", image: "BoopMark") {
             Button("Improve Selection") { PopupController.shared.trigger() }
             Text(KeyCodes.description(code: settings.hotKeyCode, modifiers: settings.hotKeyModifiers))
             Divider()
+            Button("Check for Updates…") { UpdaterManager.shared.checkForUpdates() }
+                .disabled(!updater.canCheckForUpdates)
             Button("Settings…") { SettingsWindow.open() }
             Divider()
             Button("Quit Boop") { NSApp.terminate(nil) }
@@ -28,6 +31,8 @@ struct BoopApp: App {
 final class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         NSApp.setActivationPolicy(.accessory)
+
+        UpdaterManager.shared.start()
 
         HotKeyManager.shared.onTrigger = { PopupController.shared.trigger() }
         HotKeyManager.shared.onConfirm = { PopupController.shared.pasteOutput() }

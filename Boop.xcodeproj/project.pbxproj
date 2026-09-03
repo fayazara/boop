@@ -6,13 +6,31 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		BAAF00000000000000000A01 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = BAAF00000000000000000A02 /* Sparkle */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		31EE30233049435400C11FAF /* Boop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Boop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		BAAF00000000000000000A04 /* Exceptions for "Boop" folder in "Boop" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+				boop.png,
+			);
+			target = 31EE30223049435400C11FAF /* Boop */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		31EE30253049435400C11FAF /* Boop */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				BAAF00000000000000000A04 /* Exceptions for "Boop" folder in "Boop" target */,
+			);
 			path = Boop;
 			sourceTree = "<group>";
 		};
@@ -23,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAAF00000000000000000A01 /* Sparkle in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +84,7 @@
 			);
 			name = Boop;
 			packageProductDependencies = (
+				BAAF00000000000000000A02 /* Sparkle */,
 			);
 			productName = Boop;
 			productReference = 31EE30233049435400C11FAF /* Boop.app */;
@@ -94,6 +114,9 @@
 			);
 			mainGroup = 31EE301A3049435400C11FAF;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				BAAF00000000000000000A03 /* XCRemoteSwiftPackageReference "Sparkle" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 31EE30243049435400C11FAF /* Products */;
 			projectDirPath = "";
@@ -260,6 +283,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Boop/Info.plist;
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -294,6 +318,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Boop/Info.plist;
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -335,6 +360,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BAAF00000000000000000A03 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BAAF00000000000000000A02 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BAAF00000000000000000A03 /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 31EE301B3049435400C11FAF /* Project object */;
 }

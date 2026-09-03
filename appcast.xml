@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"
+  xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Boop Updates</title>
+    <link>https://raw.githubusercontent.com/fayazara/boop/main/appcast.xml</link>
+    <language>en</language>
+
+    <!--
+      HOW TO ADD A NEW RELEASE:
+
+      Run the release CLI - it does everything (archive, notarize, staple,
+      DMG, Sparkle signature, GitHub release, and this appcast):
+
+        go run ./cmd/boop-release -build -yes \
+          -set-version 0.1.1 -set-build 2 \
+          -notes "First note
+        Second note"
+
+      CURRENT_PROJECT_VERSION must increase every release or Sparkle will not
+      offer the update. New <item> entries are prepended below this comment.
+    -->
+
+  </channel>
+</rss>

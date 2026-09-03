@@ -69,6 +69,22 @@ private struct GeneralSettings: View {
             }
 
             Section {
+                Toggle("Check for updates automatically", isOn: Binding(
+                    get: { UpdaterManager.shared.automaticallyChecksForUpdates },
+                    set: { UpdaterManager.shared.automaticallyChecksForUpdates = $0 }
+                ))
+                LabeledContent("Version") {
+                    HStack(spacing: 8) {
+                        Text(UpdaterManager.shared.currentVersion)
+                            .foregroundStyle(.secondary)
+                        Button("Check Now") { UpdaterManager.shared.checkForUpdates() }
+                    }
+                }
+            } header: {
+                Text("Updates")
+            }
+
+            Section {
                 LabeledContent("Accessibility") {
                     HStack(spacing: 8) {
                         Label(
