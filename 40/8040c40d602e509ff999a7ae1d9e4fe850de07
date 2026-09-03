@@ -1,0 +1,21 @@
+README.md
+  s_711e7e2600b5f3::t_dda9690b76cae2 49-55
+cmd/boop-release/main.go
+  s_711e7e2600b5f3::t_ec03416f2008b4 447
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "408040c40d602e509ff999a7ae1d9e4fe850de07",
+  "prompts": {},
+  "sessions": {
+    "s_711e7e2600b5f3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "fc5c88cf-6dd4-46b4-ba28-51b48d8d8b36",
+        "model": "claude-opus-5"
+      },
+      "human_author": "Fayaz Ahmed <fayazara@gmail.com>"
+    }
+  }
+}
