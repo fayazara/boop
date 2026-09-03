@@ -9,18 +9,48 @@
 
     <!--
       HOW TO ADD A NEW RELEASE:
+      1. Bump MARKETING_VERSION and CURRENT_PROJECT_VERSION in Xcode.
+      2. Export Boop.app to ~/Downloads.
+      3. Run: go run ./cmd/boop-release
+         - Enter release notes when prompted, or run non-interactively with
+           flags, e.g.:
+             go run ./cmd/boop-release -yes \
+               -notes "Fixed pixelate preview
+             Improved upload flow"
+           (-notes-file <path> reads bullets from a file instead.)
 
-      Run the release CLI - it does everything (archive, notarize, staple,
-      DMG, Sparkle signature, GitHub release, and this appcast):
+      The release tool creates Boop.dmg, signs it with Sparkle, prepends
+      this appcast, commits/pushes appcast.xml to main, and creates the GitHub
+      release with the DMG attached.
 
-        go run ./cmd/boop-release -build -yes \
-          -set-version 0.1.1 -set-build 2 \
-          -notes "First note
-        Second note"
-
-      CURRENT_PROJECT_VERSION must increase every release or Sparkle will not
-      offer the update. New <item> entries are prepended below this comment.
+      Newest release goes on top.
     -->
+
+    <item>
+      <title>Version 0.1.0</title>
+      <sparkle:version>1</sparkle:version>
+      <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.5</sparkle:minimumSystemVersion>
+      <pubDate>Thu, 03 Sep 2026 09:58:20 +0000</pubDate>
+      <description><![CDATA[
+        <h2>What's New in 0.1.0</h2>
+        <ul>
+          <li>Improve any selected text anywhere on your Mac with a Hyper + A hot key</li>
+          <li>Popover anchors to the selected text itself using the Accessibility API</li>
+          <li>Responses stream in from your own Cloudflare AI Gateway, so provider keys never touch the app</li>
+          <li>Eight models across OpenAI, Anthropic and Google</li>
+          <li>Copy, paste straight back into the source app, or regenerate</li>
+          <li>Configurable hot key, system prompt and reasoning effort</li>
+          <li>Automatic updates via Sparkle</li>
+        </ul>
+      ]]></description>
+      <enclosure
+        url="https://github.com/fayazara/boop/releases/download/v0.1.0/Boop.dmg"
+        type="application/octet-stream"
+        sparkle:edSignature="55kGsvoP/xU60NsHt+N3RibFG+BDH+rbbHl58GQ08Z74GiW7qFydSLsIAWBxiZ6M9NuFAAX288NHaY6g4EUVCg=="
+        length="2088661"
+      />
+    </item>
 
   </channel>
 </rss>
