@@ -27,6 +27,26 @@
     -->
 
     <item>
+      <title>Version 0.1.1</title>
+      <sparkle:version>2</sparkle:version>
+      <sparkle:shortVersionString>0.1.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>15</sparkle:minimumSystemVersion>
+      <pubDate>Thu, 03 Sep 2026 10:56:58 +0000</pubDate>
+      <description><![CDATA[
+        <h2>What's New in 0.1.1</h2>
+        <ul>
+          <li>Lowered the minimum macOS version to 15, so Boop now runs on Sequoia and later</li>
+        </ul>
+      ]]></description>
+      <enclosure
+        url="https://github.com/fayazara/boop/releases/download/v0.1.1/Boop.dmg"
+        type="application/octet-stream"
+        sparkle:edSignature="epN8Md+PNKCJ+QyDwkCdB3MWlWX6XirBC8eXyRxO4A3fIYlYIfWsXMF/b197aNUCriubd96WrqIcjQnkXTo1Cg=="
+        length="2098247"
+      />
+    </item>
+
+    <item>
       <title>Version 0.1.0</title>
       <sparkle:version>1</sparkle:version>
       <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
