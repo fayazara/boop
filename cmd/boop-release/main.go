@@ -444,7 +444,7 @@ func renderCask(version, sha string) string {
 
   url "https://github.com/%s/releases/download/v#{version}/%s"
   name "Boop"
-  desc "Native macOS menu bar screenshot and screen recording tool"
+  desc "Menu bar app that improves selected text using your own AI gateway"
   homepage "https://github.com/%s"
 
   auto_updates true
@@ -453,7 +453,6 @@ func renderCask(version, sha string) string {
 
   zap trash: [
     "~/Library/Preferences/%s.plist",
-    "~/Library/Application Support/Boop",
   ]
 end
 `, version, sha, githubRepo, dmgName, githubRepo, appName, bundleID)

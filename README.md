@@ -46,9 +46,13 @@ is a dropdown rather than a re-auth.
 
 ## Install
 
-Download the latest `Boop.dmg` from [Releases](https://github.com/fayazara/boop/releases),
-drag it to Applications, and launch it. Boop updates itself from there on via
-Sparkle.
+```bash
+brew install --cask fayazara/tap/boop
+```
+
+Or download the latest `Boop.dmg` from
+[Releases](https://github.com/fayazara/boop/releases) and drag it to
+Applications. Boop updates itself from there on via Sparkle.
 
 ## Setup
 
