@@ -18,8 +18,8 @@
 		BAAF00000000000000000A04 /* Exceptions for "Boop" folder in "Boop" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
 				boop.png,
+				Info.plist,
 			);
 			target = 31EE30223049435400C11FAF /* Boop */;
 		};
@@ -290,6 +290,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 15;
 				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fayazahmed.Boop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -325,6 +326,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 15;
 				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fayazahmed.Boop;
 				PRODUCT_NAME = "$(TARGET_NAME)";

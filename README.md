@@ -3,7 +3,7 @@
   <h1>Boop</h1>
   <p><strong>Select text anywhere on your Mac, press a hot key, get better writing.</strong></p>
   <p>
-    <img src="https://img.shields.io/badge/macOS-26.5%2B-black" alt="macOS 26.5+">
+    <img src="https://img.shields.io/badge/macOS-15%2B-black" alt="macOS 15+">
     <img src="https://img.shields.io/badge/license-MIT-black" alt="MIT">
   </p>
 </div>
@@ -92,7 +92,7 @@ standard SSE deltas.
 
 ## Building from source
 
-Requires Xcode 26 and macOS 26.5+.
+Requires Xcode 26. Runs on macOS 15 (Sequoia) and later.
 
 ```bash
 git clone https://github.com/fayazara/boop.git

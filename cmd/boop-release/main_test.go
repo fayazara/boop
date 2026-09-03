@@ -27,7 +27,7 @@ func TestWriteAppcast(t *testing.T) {
 			Title:              "Version 1.0",
 			Version:            "1",
 			ShortVersionString: "1.0",
-			MinSystemVersion:   minSystemVer,
+			MinSystemVersion:   "15.0",
 			PubDate:            "Tue, 12 May 2026 09:30:00 +0000",
 			Description:        buildDescription("1.0", []string{"Initial release"}),
 			Enclosure: Enclosure{

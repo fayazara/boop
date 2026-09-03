@@ -55,7 +55,6 @@ const (
 	appDisplayName = "Boop"
 	githubRepo     = "fayazara/boop"
 	gitBranch      = "main"
-	minSystemVer   = "26.5"
 	dmgVolumeName  = "Boop"
 	appName        = "Boop.app"
 	dmgName        = "Boop.dmg"
@@ -311,7 +310,7 @@ func main() {
 		Title:              fmt.Sprintf("Version %s", version),
 		Version:            build,
 		ShortVersionString: version,
-		MinSystemVersion:   minSystemVer,
+		MinSystemVersion:   minimumSystemVersion(appPath),
 		PubDate:            pubDate,
 		Description:        buildDescription(version, notes),
 		Enclosure: Enclosure{
@@ -605,6 +604,18 @@ func releaseExists(tag string) bool {
 	}
 	_, err = runCmdRetry(2, "gh", "release", "view", tag, "--repo", githubRepo)
 	return err == nil
+}
+
+// minimumSystemVersion reads LSMinimumSystemVersion from the built app, so the
+// appcast always matches MACOSX_DEPLOYMENT_TARGET rather than a constant someone
+// forgot to bump.
+func minimumSystemVersion(appPath string) string {
+	plistPath := filepath.Join(appPath, "Contents", "Info.plist")
+	value, err := plistValue(plistPath, "LSMinimumSystemVersion")
+	if err != nil || strings.TrimSpace(value) == "" {
+		fail("Could not read LSMinimumSystemVersion from " + plistPath)
+	}
+	return strings.TrimSpace(value)
 }
 
 func plistValue(plistPath, key string) (string, error) {
